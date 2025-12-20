@@ -15,6 +15,7 @@ jobs:
       - name: Install dependencies
         working-directory: app
         run: npm install
-      - name: Run app syntax check
+      - name: Run tests
         working-directory: app
-        run: node index.js
+        run: npm test
+
