@@ -38,6 +38,11 @@ const LoginScreen = ({navigation}: Props) => {
   onPress={() => navigation.navigate('Home')}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
+<Text
+  style={styles.registerText}
+  onPress={() => navigation.navigate('Register')}>
+  Create an account
+</Text>
     </View>
   );
 };
@@ -70,6 +75,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     fontWeight: '600',
+  },
+  registerText: {
+    marginTop: 16,
+    textAlign: 'center',
+    color: '#0066cc',
   },
 });
 
