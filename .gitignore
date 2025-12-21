@@ -1,14 +1,16 @@
-# React Native
-mobile/node_modules/
-mobile/android/.gradle/
-mobile/android/build/
-mobile/android/app/build/
-mobile/ios/
-# React Native
+# =========================
+# React Native (MobileApp)
+# =========================
+
+# Dependencies
 mobile/MobileApp/node_modules/
+
+# Android
 mobile/MobileApp/android/.gradle/
-mobile/MobileApp/android/app/build/
 mobile/MobileApp/android/build/
+mobile/MobileApp/android/app/build/
+
+# iOS (future / mac only)
 mobile/MobileApp/ios/build/
 
 # Metro
