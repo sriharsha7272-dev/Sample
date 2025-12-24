@@ -6,8 +6,12 @@ on:
       - main
 
 jobs:
-  docker-build:
+  docker-build-and-push:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout repository
@@ -16,6 +20,15 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build backend Docker image
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
         run: |
-          docker build -t sample-backend:ci .
+          docker build -t ghcr.io/${{ github.repository }}/sample-backend:latest .
+          docker push ghcr.io/${{ github.repository }}/sample-backend:latest
+
